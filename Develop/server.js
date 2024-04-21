@@ -14,11 +14,11 @@ app.use(express.static('public'));
 
 // Notes HTML route
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, 'notes.html'));
+    res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 // Homepage HTML route
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 // Notes API get route
@@ -35,7 +35,8 @@ app.get('/api/notes', (req, res) => {
 
 // Notes API post route
 app.post('/api/notes', (req, res) => {
-    const notes = JSON.parse(data)
+// TODO: Debug, fix JSON.parse (syntax error)
+    const notes = JSON.parse(notesDb)
     const newNotes = req.body;
     newNotes.id = uuidv4();
     notes.push(newNotes);
@@ -45,7 +46,7 @@ app.post('/api/notes', (req, res) => {
 
 // Notes DELETE request
 app.delete('/api/notes/:id', (req, res) => {
-
+// TODO: add code for app.delete
 });
 
 // listener for port
