@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 // This is needed to create a unique id for each note. (uses NPM package 'shortid')
 const {v4 : uuidv4} = require('uuid')
-const notesDb = require('./Develop/db/db.json');
+const notesDb = require('./db/db.json');
 
 const PORT = process.env.PORT || 3000
 
