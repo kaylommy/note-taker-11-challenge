@@ -27,7 +27,6 @@ app.get('/api/notes', (req, res) => {
             res.json(JSON.parse(data));
         }
     });
-    
 });
 
 // Notes API post route
@@ -39,11 +38,14 @@ app.post('/api/notes', (req, res) => {
     notes.push(newNotes);
     fs.writeFileSync('./db/db.json', JSON.stringify(notes))
     res.json(notes);
-})
+});
 
 // Notes DELETE request (bonus)
 app.delete('/api/notes/:id', (req, res) => {
-// TODO: add code for app.delete
+    const notes = JSON.parse(fs.readFileSync('./db/db.json'));
+    const newNotes = notes.filter(notes => notes.id !== req.params.id);
+    fs.writeFileSync('./db/db.json', JSON.stringify(newNotes));
+    res.json(newNotes);
 });
 
 // Homepage HTML route
