@@ -21,4 +21,4 @@
 ![alt text](./public/assets/images/note-taker-page.png 'Note taker screenshot')
 
 ## Note
-The commit after 'first commit' contains most of my code because I made a mistake on pushing and accidentally pushed all my files and could not properly access my code. So I created a new repo.
+The commit after 'first commit' contains most of my code because I made a mistake on pushing and accidentally pushed all my files and could not properly access my code. So I created a new repo. Also worked on some of this project with Michael Freeman.
